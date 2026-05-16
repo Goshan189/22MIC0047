@@ -154,7 +154,7 @@ type (string)
 
 message (text)
 
-is_read (
+is_read (boolean)
 
 created_at (timestamp)
 
@@ -174,7 +174,7 @@ The given query is:
 
 SELECT \* FROM notifications
 
-WHERE studentID = 1042 AND isRead =
+WHERE studentID = 1042 AND isRead = false
 
 ORDER BY createdAt ASC;
 
