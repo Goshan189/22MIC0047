@@ -1,13 +1,16 @@
-Overview
+# Stage 1
+
+## Overview
 
 This system is designed to handle notifications for students related to placements, events, and results. The goal is to allow users to receive updates in real time and also be able to view past notifications efficiently.
 
-Core Features
+## Core Features
 Create a notification
 Fetch notifications (with pagination and filters)
 Mark notifications as read
 Real-time notification delivery
-API Design
+
+## API Design
 1. Create Notification
 
 POST /notifications
@@ -86,21 +89,23 @@ Each notification will have:
   "isRead": false,
   "createdAt": "timestamp"
 }
-Real-time Notifications
+
+## Real-time Notifications
 
 For real-time updates, WebSockets can be used so that new notifications are pushed to the client instantly.
 
 If WebSockets are not used, polling can be done at regular intervals, but that is less efficient.
 
-Design Note
+## Design Note
 
 Notifications should be saved in the database before being sent to users. This ensures that even if delivery fails, the data is not lost and can be fetched later.
 
-Authentication
+## Authentication
 
 All APIs are protected and require a Bearer token:
 
 Authorization: Bearer <access_token>
-Summary
+
+## Summary
 
 This design focuses on keeping APIs simple and predictable while supporting real-time updates and efficient data fetching.
